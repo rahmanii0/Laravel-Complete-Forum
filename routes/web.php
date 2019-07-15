@@ -21,6 +21,11 @@ Route::get('{provider}/auth','SocialsController@auth')->name('Socialauth');
 Route::get('{provider}/redirect','SocialsController@authCallback')->name('socialCallBack');
 
 
+Route::group(['middleware'=>'auth'],function (){
+   Route::resource('channels','ChannelsController');
+});
+
+
 
 
 

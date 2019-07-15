@@ -19,8 +19,8 @@ return [
             'scope' => [],
         ],
         'github' => [
-            'client_id' => '843ec12de88f73826c5b',
-            'client_secret' => 'fdef0d2251408d456ccb07b21eaa0d745c93eb8e',
+            'client_id' => '6e0aec7dd6d4a68217b7',
+            'client_secret' => '2c353aa542c0e4625a8f9eb4b99930b2186933d1',
             'redirect_uri' => 'http://localhost:8000/github/redirect',
             'scope' => [],
         ],
