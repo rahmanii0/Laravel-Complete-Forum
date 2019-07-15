@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Channel;
-use DemeterChain\C;
+
 use Illuminate\Http\Request;
 
 class ChannelsController extends Controller
@@ -37,11 +37,11 @@ class ChannelsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-           'title'=>'required'
+           'channel'=>'required'
         ]);
-        $channel = new Channel;
-        $channel->title = $request->title;
-        $channel->save();
+        Channel::create([
+           'title'=>$request->channel
+        ]);
         return view('channels.index')->with('channels',Channel::all());
 
     }
@@ -79,8 +79,9 @@ class ChannelsController extends Controller
     public function update(Request $request, $id)
     {
         $channel = Channel::find($id);
-        $channel->title = $request->title;
+        $channel->title = $request->channel;
         $channel->save();
+         return redirect()->back();
     }
 
     /**
