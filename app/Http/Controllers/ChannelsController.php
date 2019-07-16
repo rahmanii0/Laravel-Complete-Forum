@@ -81,7 +81,7 @@ class ChannelsController extends Controller
         $channel = Channel::find($id);
         $channel->title = $request->channel;
         $channel->save();
-         return redirect()->back();
+        return view('channels.index')->with('channels',Channel::all());
     }
 
     /**
